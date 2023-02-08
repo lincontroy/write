@@ -22,10 +22,10 @@
                         <div class="banner-content5">
                             <div class="mx-727" data-aos="fadeindown" data-aos-duration="1000">
                                 <h1 class="text-gray-900 rt-mb-24">
-                                    {{ __('find_job_that_suits_your_interest_skills') }}
+                                    {{ __('Start writing and transcribing to earn a descent income') }}
                                 </h1>
                                 <div class="f-size-18 text-gray-600 rt-mb-30">
-                                    {{ __('find_the_perfect_jobs_employment_career_opportunities') }}
+                                    {{ __('Write from home and get paid instantly to your mobile wallet') }}
                                 </div>
                             </div>
                             <form action="{{ route('website.job') }}" method="GET" id="job_search_form">

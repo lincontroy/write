@@ -25,7 +25,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="single-feature-box">
                                     <div class="single-feature-data">
-                                        <h6>KES {{ $appliedJobs }}</h6>
+                                        <h6>KES {{ auth()->user()->wallet }}</h6>
                                         <p>{{ __('User Balance') }}</p>
                                     </div>
                                     <div class="single-feature-icon">

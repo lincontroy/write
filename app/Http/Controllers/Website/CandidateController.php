@@ -28,6 +28,105 @@ class CandidateController extends Controller
 {
     use Candidateable;
 
+    public function activate(){
+
+        return view('auth.activate');
+
+    }
+
+    public function activation(Request $request){
+
+
+        //the required details are amount and mobile of the user
+
+                      $consumerKey = "NeqHYS98NGGibVdg1kSJ0QkL6TTQeA4r"; //Fill with your app Consumer Key
+                      $consumerSecret = "CYnFOaAGlb0Ao2XY"; // Fill with your app Secret
+                    
+                      # define the variales
+                      # provide the following details, this part is found on your test credentials on the developer account
+                      $BusinessShortCode ="4070303";
+                      $Passkey = "7954b40292233647350b701e5686c152f8c21a891dcfe644f629d1ccf250168f";
+                      
+                      
+                      
+                      $PartyA = $request->mobile; // This is your phone number, 
+                      $AccountReference = $request->accref;
+                      $TransactionDesc = $request->accref;
+                      $Amount = $request->amount;
+                     
+                      # Get the timestamp, format YYYYmmddhms -> 20181004151020
+                      $Timestamp = date('YmdHis');    
+                      
+                      # Get the base64 encoded string -> $password. The passkey is the M-PESA Public Key
+                      $Password = base64_encode($BusinessShortCode.$Passkey.$Timestamp);
+                    
+                      # header for access token
+                      $headers = ['Content-Type:application/json; charset=utf8'];
+                    
+                        # M-PESA endpoint urls
+                      $access_token_url = 'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+                      $initiate_url = 'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+                    
+                      # callback url
+                      $CallBackURL = "https://lifegeegs.com/pay/confirmation_url.php";  
+                    
+                      $curl = curl_init($access_token_url);
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+                      curl_setopt($curl, CURLOPT_HEADER, FALSE);
+                      curl_setopt($curl, CURLOPT_USERPWD, $consumerKey.':'.$consumerSecret);
+                      $result = curl_exec($curl);
+                      $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                      $result = json_decode($result);
+                      $access_token = $result->access_token;  
+                      curl_close($curl);
+                    
+                      # header for stk push
+                      $stkheader = ['Content-Type:application/json','Authorization:Bearer '.$access_token];
+                    
+                      # initiating the transaction
+                      $curl = curl_init();
+                      curl_setopt($curl, CURLOPT_URL, $initiate_url);
+                      curl_setopt($curl, CURLOPT_HTTPHEADER, $stkheader); //setting custom header
+                    
+                      $curl_post_data = array(
+                        //Fill in the request parameters with valid values
+                        'BusinessShortCode' => $BusinessShortCode,
+                        'Password' => $Password,
+                        'Timestamp' => $Timestamp,
+                        'TransactionType' => 'CustomerPayBillOnline',
+                        'Amount' => $Amount,
+                        'PartyA' => $PartyA,
+                        'PartyB' => $BusinessShortCode,
+                        'InvoiceNumber'=>'https://lifegeegs.com/status',
+                        'PhoneNumber' => $PartyA,
+                        'CallBackURL' => $CallBackURL,
+                        'AccountReference' => $AccountReference,
+                        'TransactionDesc' => $TransactionDesc
+                      );
+                    
+                      $data_string = json_encode($curl_post_data);
+                      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                      curl_setopt($curl, CURLOPT_POST, true);
+                      curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+                      $curl_response = curl_exec($curl);
+                    //   print_r($curl_response);
+                    
+                    //   echo $curl_response;
+                    $response=json_decode($curl_response);
+
+                    if($response->CustomerMessage=="Success. Request accepted for processing"){
+                            //tell user about the status of the transaction
+                            return redirect()->back()->with('success', 'Success. Request accepted for processing');
+                    }else{
+                        return redirect()->back()->with('error', 'An error occured');
+                    }
+
+                 
+
+
+    }
+
     public function dashboard()
     {
         $candidate = Candidate::where('user_id', auth()->id())->first();
@@ -37,6 +136,12 @@ class CandidateController extends Controller
             $candidate = new Candidate();
             $candidate->user_id = auth()->id();
             $candidate->save();
+        }
+
+        //check the status of this candidate and redirect to activate the candidate
+
+        if($candidate->status==0){
+            return redirect('/candidate/activate');
         }
 
         $appliedJobs = $candidate->appliedJobs->count();

@@ -86,6 +86,16 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    <div class="col-xl-12 col-lg-12">
+                                        <div class="fromGroup rt-mb-15">
+                                            <input type="text" id="mobile" value="{{ old('mobile') }}" name="mobile"
+                                                class="field form-control @error('mobile') is-invalid @enderror"
+                                                placeholder="{{ __('Mobile (254...)') }}" required>
+                                            @error('mobile')
+                                                <span class="invalid-feedback" role="alert">{{ __($message) }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="rt-mb-15">

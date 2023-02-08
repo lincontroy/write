@@ -28,6 +28,10 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 // Guest Routes
+Route::post('activation', [CandidateController::class,'activation'])->name('activation');
+
+
+
 Route::controller(WebsiteController::class)->name('website.')->group(function () {
     Route::get('/', 'index')->name('home');
     Route::get('/about', 'about')->name('about');
