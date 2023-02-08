@@ -1,0 +1,8 @@
+Replace those files to update from 2.7.1 to 2.7.3
+----------------------------------------------------
+
+1. app/Http/Controllers/Website/WebsiteController.php
+2. app/Http/Controllers/Website/WebsiteSettingController.php
+3. resources/views/admin/settings/pages/website_setting.blade.php
+4. resources/views/website/pages/privacy-policy.blade.php
+5. vendor
