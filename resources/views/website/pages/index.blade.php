@@ -279,7 +279,7 @@
                         <div class="iconbox-content">
                             <div class="body-font-2 rt-mb-12">{{ __('create_account') }}</div>
                             <div class="body-font-4 text-gray-400">
-                                {{ __('create_account_description') }}
+                                {{ __('Create and verify your account') }}
                             </div>
                         </div>
                     </div>
@@ -296,9 +296,9 @@
                             </div>
                         </div>
                         <div class="iconbox-content">
-                            <div class="body-font-2 rt-mb-12">{{ __('upload_cv_resume') }}</div>
+                            <div class="body-font-2 rt-mb-12">{{ __('Activate account') }}</div>
                             <div class="body-font-4 text-gray-400">
-                                {{ __('upload_cv_resume_description') }}
+                                {{ __('Activate your account to get fast access to a pool of writing and transcribing jobs.') }}
                             </div>
                         </div>
                     </div>
@@ -315,9 +315,9 @@
                             </div>
                         </div>
                         <div class="iconbox-content">
-                            <div class="body-font-2 rt-mb-12">{{ __('find_suitable_job') }}</div>
+                            <div class="body-font-2 rt-mb-12">{{ __('Find a suitable job') }}</div>
                             <div class="body-font-4 text-gray-400">
-                                {{ __('find_suitable_job_description') }}
+                                {{ __('Find a suitable job that suites your skills. e.g Accounting paper') }}
                             </div>
                         </div>
                     </div>
@@ -330,9 +330,9 @@
                             </div>
                         </div>
                         <div class="iconbox-content">
-                            <div class="body-font-2 rt-mb-12">{{ __('apply_job') }}</div>
+                            <div class="body-font-2 rt-mb-12">{{ __('Apply and get matched') }}</div>
                             <div class="body-font-4 text-gray-400">
-                                {{ __('apply_job_description') }}</div>
+                                {{ __('Get matched and start writing. Please note client deadlines are strict') }}</div>
                         </div>
                     </div>
                 </div>
