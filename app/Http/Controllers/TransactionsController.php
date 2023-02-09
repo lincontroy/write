@@ -57,12 +57,12 @@ class TransactionsController extends Controller
 
             $wallet_balance=$wallet_balance+$request->TransAmount;
 
-            $update=User::where('mobile',$request->mssidn)->update(['wallet'=>$wallet_balance]);
+            $update=User::where('mobile',$request->MSISDN)->update(['wallet'=>$wallet_balance]);
 
             if($request->TransAmount >=500 ){
 
-                $update=User::where('mobile',$request->mssidn)->update(['status'=>1]);
-                
+                $update=User::where('mobile',$request->MSISDN)->update(['status'=>1]);
+
             }
 
             return response()->json(['status'=>'saved']);
