@@ -140,10 +140,7 @@ class CandidateController extends Controller
 
         //check the status of this candidate and redirect to activate the candidate
 
-        if($candidate->status==0){
-            return redirect('/candidate/activate');
-        }
-
+      
         $appliedJobs = $candidate->appliedJobs->count();
         $favoriteJobs = $candidate->bookmarkJobs->count();
         $jobs = $candidate->appliedJobs()->withCount(['bookmarkJobs as bookmarked' => function ($q) use ($candidate) {

@@ -56,6 +56,35 @@
                                 </div>
                             </div>
                         </div>
+
+                         @if($candidate->status==0)
+
+                         <div class="dashboaed-profile-wrap">
+                                <div class="dashboaed-profile-left">
+                                    <div class="dashboaed-profile-thumb">
+                                        <img src="{{ asset($candidate->photo) }}" alt="">
+                                    </div>
+                                    <div class="dashboaed-profile-data">
+                                        <h6>{{ __('Activate account') }}</h6>
+                                        <p>{{ __('We ask our writers and transcribers to activate their accounts with KES 500 which will be available for withdrawal anytime. ') }}</p>
+                                    </div>
+                                </div>
+                                <div class="dashboaed-profile-right">
+                                    <a href="{{ route('candidate.activate') }}" class="btn bg-white text-danger-500">
+                                        <div class="button-content-wrapper ">
+                                            <span class="button-icon align-icon-right">
+                                                <i class="ph-arrow-right"></i>
+                                            </span>
+                                            <span class="button-text">
+                                                {{ __('Activate Account') }}
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                         @endif
+
                         @if ($candidate->profile_complete != 0)
                             <div class="dashboaed-profile-wrap">
                                 <div class="dashboaed-profile-left">

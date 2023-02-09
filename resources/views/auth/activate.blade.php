@@ -65,7 +65,7 @@
                                     @enderror
                                 </div>
                              
-                                <button id="submitButton" type="submit" class="btn btn-primary d-block rt-mb-15">
+                                <button id="submitButton" type="submit" class="btn btn-primary d-block rt-mb-15" onclick="pushdata()">
                                     <span class="button-content-wrapper ">
                                         <span class="button-icon align-icon-right">
                                             <x-svg.rightarrow-icon />
