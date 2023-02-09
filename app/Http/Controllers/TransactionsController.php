@@ -43,7 +43,7 @@ class TransactionsController extends Controller
         $transactions->code=$request->TransID;
 
         $transactions->amount=$request->TransAmount;
-        $transactions->mssidn=$request->mssidn;
+        $transactions->mssidn=$request->MSISDN;
 
         //get from users table where mobile is this mssidn
 
