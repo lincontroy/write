@@ -103,9 +103,9 @@ class CompanyController extends Controller
         $location = session()->get('location');
         if (!$location) {
 
-            $request->validate([
-                'location' => 'required',
-            ]);
+            // $request->validate([
+            //     'location' => 'required',
+            // ]);
         }
 
         try {
@@ -163,7 +163,7 @@ class CompanyController extends Controller
             }
 
             // Location
-            updateMap($company->company());
+            // updateMap($company->company());
 
             // make Notification /
             $data[] = $company;
