@@ -140,9 +140,9 @@ class JobController extends Controller
         $location = session()->get('location');
         if (!$location) {
 
-            $request->validate([
-                'location' => 'required',
-            ]);
+            // $request->validate([
+            //     'location' => 'required',
+            // ]);
         }
 
         $highlight = $request->badge == 'highlight' ? 1 : 0;
@@ -171,7 +171,7 @@ class JobController extends Controller
         ]);
 
         // <!--  location  -->
-        updateMap($jobCreated);
+        // updateMap($jobCreated);
 
         if ($jobCreated) {
             flashSuccess('Job Created Successfully');

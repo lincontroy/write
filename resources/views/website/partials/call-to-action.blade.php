@@ -3,7 +3,7 @@
             <div class="col-xl-6 rt-mb-24">
                 <div class="cta-1 ct-height bgprefix-cover"
                     style="background-image: url({{ asset($cms_setting->candidate_image) }}">
-                    <h5 class="rt-mb-15">{{ __('candidate_title') }}</h5>
+                    <h5 class="rt-mb-15">{{ __('Become a Writer') }}</h5>
                     <div class="body-font-4 rt-mb-24 text-gray-600 max-312">
                         {{ __('candidate_description') }}
                     </div>
@@ -32,7 +32,7 @@
             <div class="col-xl-6 rt-mb-24">
                 <div class="cta-1 ct-height bgprefix-cover"
                     style="background-image: url({{ asset($cms_setting->employers_image) }}">
-                    <h5 class="rt-mb-15 text-gray-10">{{ __('employers_title') }}</h5>
+                    <h5 class="rt-mb-15 text-gray-10">{{ __('Become an Employer') }}</h5>
                     <div class="body-font-4 rt-mb-24 text-gray-10 max-312">
                         {{ __('employers_description') }}
                     </div>
