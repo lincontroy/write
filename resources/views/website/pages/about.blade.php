@@ -27,7 +27,15 @@
                         <h2 class="rt-mb-40 {{ $setting->nav_color ? '' : $setting->nav_color }}">
                             {{ __('we_are_highly_skilled_and_professionals_team') }}</h2>
                         <p class="body-font-2 text-gray-500 rt-mb-0">
-                            {{ __('praesent_non_sem_facilisis_hendrerit_nisi_vitae_volutpat_quam_Aliquam_metus_mauris_semper') }}
+                          WriterWave is a cutting-edge writing and transcribing service that provides its clients with high-quality content, crafted by experienced and professional writers. The platform caters to businesses and individuals who are looking for a reliable source for their written and transcribed content, be it for blogs, articles, product descriptions, reports, or any other type of content.
+
+The company's team of writers is highly trained and equipped with the necessary skills and experience to deliver top-notch content that is tailored to the specific needs of each client. The writers are able to craft content that is not only informative and engaging, but also optimized for search engines to ensure maximum visibility and impact.
+
+In addition to its writing services, WriterWave also offers transcription services, which can be especially useful for businesses and individuals who need their audio or video content to be transcribed into written form. The company's transcriptionists are highly accurate and efficient, and can transcribe audio and video files in a variety of formats, including podcasts, webinars, and interviews.
+
+One of the key benefits of working with WriterWave is the convenience and ease of use of the platform. Clients can simply place an order through the website, specifying the type of content they need and the deadline for delivery. The platform also offers an intuitive interface that allows clients to communicate directly with the writer assigned to their project, ensuring that their content is crafted to their exact specifications.
+
+In conclusion, WriterWave is a comprehensive writing and transcribing service that offers its clients a unique blend of quality, convenience, and affordability. Whether you're a business looking to create high-quality content for your website or an individual who needs transcribing services for your audio or video content, WriterWave has got you covered.
                         </p>
                     </div>
                 </div>
@@ -165,7 +173,15 @@
                             class="body-font-3 ft-wt-5 text-primary-500 rt-mb-15 d-inline-block">{{ __('our_mission') }}</span>
                         <h3 class="rt-mb-32">{{ __('we_are_highly_skilled_and_professionals_team') }}</h3>
                         <p class="body-font-2 text-gray-500 rt-mb-0">
-                            {{ __('praesent_non_sem_facilisis_hendrerit_nisi_vitae_volutpat_quam_Aliquam_metus_mauris_semper_metus') }}
+                        WriterWave is a cutting-edge writing and transcribing service that provides its clients with high-quality content, crafted by experienced and professional writers. The platform caters to businesses and individuals who are looking for a reliable source for their written and transcribed content, be it for blogs, articles, product descriptions, reports, or any other type of content.
+
+The company's team of writers is highly trained and equipped with the necessary skills and experience to deliver top-notch content that is tailored to the specific needs of each client. The writers are able to craft content that is not only informative and engaging, but also optimized for search engines to ensure maximum visibility and impact.
+
+In addition to its writing services, WriterWave also offers transcription services, which can be especially useful for businesses and individuals who need their audio or video content to be transcribed into written form. The company's transcriptionists are highly accurate and efficient, and can transcribe audio and video files in a variety of formats, including podcasts, webinars, and interviews.
+
+One of the key benefits of working with WriterWave is the convenience and ease of use of the platform. Clients can simply place an order through the website, specifying the type of content they need and the deadline for delivery. The platform also offers an intuitive interface that allows clients to communicate directly with the writer assigned to their project, ensuring that their content is crafted to their exact specifications.
+
+In conclusion, WriterWave is a comprehensive writing and transcribing service that offers its clients a unique blend of quality, convenience, and affordability. Whether you're a business looking to create high-quality content for your website or an individual who needs transcribing services for your audio or video content, WriterWave has got you covered.
                         </p>
                     </div>
                     <div class="col-md-6">
